@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountryInformation</title>
+    <link rel="stylesheet" href="countryInformation.css">
+    <!-- for use w3 icons -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+
+    <div class="parentDropDown">
+        <h3>Select a country and get information</h3>
+        <button class="dropDown-button hvrPointer">
+            <div class="dropButton-text">Select your country</div>
+            <div class="dropButton-icon">
+                <span class="fas fa-caret-up"></span>
+                <span class="fas fa-caret-down"></span>
+            </div>
+        </button>
+        <div class="dropDown-Content">
+            <a href="">Select Country</a>
+        </div>
+    </div>
+
+    <div class="parentInfo1">
+        <div class="country-name part lg-5 sm-12">
+            <h2>Country Name</h2>
+            <div class="dv1">
+                <span class="title1">Native Name: </span>
+                <span id="native-name">----</span>
+            </div>
+            <div class="dv1">
+                <span class="title1">Capital: </span>
+                <span id="capital">----</span>
+            </div>
+            <div class="dv1">
+                <span class="title1">Region: </span>
+                <span id="region">----</span>
+            </div>
+            <div class="dv1">
+                <span class="title1">Population: </span>
+                <span id="population">----</span>
+            </div>
+            <div class="dv1">
+                <span class="title1">Languages: </span>
+                <span id="languages">----</span>
+            </div>
+            <div class="dv1">
+                <span class="title1">Time Zone: </span>
+                <span id="time-zone">----</span>
+            </div>
+        </div>
+
+        <div class="calling-code part lg-5 sm-12">
+            <div class="head-callingCode">Calling Code</div>
+            <div class="body-callingCode"><span>- - -</span></div>
+        </div>
+
+        <div class="country-flag part lg-7 sm-12"> </div>
+    </div>
+
+    <div class="parentInfo2">
+        <div class="weather lg-7 sm-12">
+            <h2>CAPITAL WEATHER REPORTER</h2>
+            <div class="image-info dv2">
+                <div id="image-icon"></div>
+                <div id="conditionText"></div>
+            </div>
+            <div class="dv2">
+                <span class="title2">Wind Speed: </span>
+                <span id="wind-speed">----</span>
+            </div>
+            <div class="dv2">
+                <span class="title2">Temperature: </span>
+                <span id="temperature">----</span>
+            </div>
+            <div class="dv2">
+                <span class="title2">Humidity: </span>
+                <span id="humidity">----</span>
+            </div>
+            <div class="dv2">
+                <span class="title2">Visibility: </span>
+                <span id="visibility">----</span>
+            </div>
+        </div>
+        <div class="map lg-10 sm-12">
+
+        </div>
+    </div>
+
+    <!-- for use googleMapApi -->
+    <script>
+        function initMap() {
+            let myLatLng = {lat: -34.397, lng: 150.644};
+
+            let map = new google.maps.Map(document.getElementsByClassName("map")[0], {
+            center: myLatLng,
+            zoom: 8
+            });
+
+            let marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: "your indented location"
+            })
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFRzDhFHBtsnLkLz5-0FW_cXsWd6_cz7c&callback=initMap"async defer></script>
+
+    <!-- for myLocal files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="countryInformation.js"></script>
+</body>
+</html>
